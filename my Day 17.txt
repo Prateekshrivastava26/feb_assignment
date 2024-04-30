@@ -1,0 +1,61 @@
+Ans 1.
+
+In Java, strings are immutable. This means that once a string is created, its value cannot be changed. However, there are two classes, StringBuffer and StringBuilder, that can be used to create mutable strings.
+
+Ex-StringBuffer str = new StringBuffer("Hello");
+str.append(" World!");
+System.out.println(str);
+
+Ans 2.
+
+import java.util.Scanner;
+class reversestring {
+    public static void main(String[] args) {
+Scanner an = new Scanner(System.in);
+        System.out.println("Enter the string");
+        String aa = an.nextLine();
+        String aw = "";
+        for(int i = (aa.length()-1);i>=0;i--){
+            aw = aw+aa.charAt(i);
+        }
+        System.out.println(aw);
+    }
+}
+
+Ans 3 .
+
+class reversestring{
+    public static void main(String[] args) {
+        String str1 = "Think Twice";
+        String str2 = "";
+        String strr[] = str1.split(" ");
+        for(String elem : strr){
+            for(int i = elem.length()-1;i>=0;i--){
+                str2 = str2 + elem.charAt(i);
+            }
+            str2 = str2 + " ";
+        }
+        System.out.println(str2);
+    }
+}
+
+
+Ans 4.
+
+public class sortstringalphabetically {
+    public static void main(String[] args) {
+        String str = "java";
+        char [] arr = str.toCharArray();
+        char temp;
+        for(int i=0;i<arr.length;i++){
+            for (int j=i+1;j<arr.length;j++){
+                if(arr[i]>arr[j]){
+                    temp = arr[i];
+                    arr [i]= arr[j];
+                    arr[j]= temp;
+                }
+            }
+        }
+        System.out.println(new String(arr));
+    }
+}
