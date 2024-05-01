@@ -1,0 +1,114 @@
+1.What is encapsulation in java? Why is it called data hiding?
+Ans-Encapsulation in Java is a fundamental object-oriented programming concept that involves bundling data and methods that operate on that data within a single unit, typically a class. It helps in hiding the internal state of an object and only exposing necessary functionalities through methods.
+
+ex-
+public class Person {
+  private String name;
+  private int age;
+
+  public Person(String name, int age) {
+    this.name = name;
+    this.age = age;
+  }
+
+  public String getName() {
+    return name;
+  }
+
+  public void setName(String name) {
+    this.name = name;
+  }
+
+  public int getAge() {
+    return age;
+  }
+
+  public void setAge(int age) {
+    this.age = age;
+  }
+}
+
+
+2.What are the important features of encapsulation?
+Ans.Data protection
+    Information hiding
+   Abstraction
+ Separating complexity
+
+
+3.What are getter and setter methods in java explain with an example?
+Ans.Getter and setter methods are methods in Java that are used to access and modify the private members of a class. The getter method is used to get the value of a private member, and the setter method is used to set the value of a private member.
+
+ex -
+public class Person {
+  private String name;
+
+  public void setName(String name) {
+    this.name = name;
+  }
+
+  public String getName() {
+    return name;
+  }
+}
+
+
+
+4.What is the use of this keyword explin with an example?
+Ans.The this keyword in Java is a reference to the current object. It can be used to refer to the instance variables and methods of the current object. It can also be used to call constructors.
+
+ex-
+class MyClass {
+  int x;
+
+  MyClass(int x) {
+    this.x = x;
+  }
+
+  public static void main(String[] args) {
+    MyClass myClass = new MyClass(10);
+    System.out.println(myClass.x); // Output: 10
+  }
+}
+
+
+
+5.What is the advantage of encapsulaition?
+Ans.Data protection
+Reduced errors
+Improved maintainability
+Easier to understand
+Increased flexibility
+Freedom to implement
+
+
+
+6.How to achieve encapsulation in java with example.
+Ans.
+
+public class Student {
+    private String name;
+    private int age;
+
+    public Student(String name, int age) {
+        this.name = name;
+        this.age = age;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public int getAge() {
+        return age;
+    }
+
+    public void setAge(int age) {
+        this.age = age;
+    }
+}
+
