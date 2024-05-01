@@ -1,0 +1,47 @@
+1. What do you need static keyword in java explain with an example.
+Ans.
+
+The static keyword in Java is used to declare a member variable or method that belongs to the class itself, rather than to an instance of the class. This means that there is only one copy of a static member shared across all instances of the class.
+
+ex-public class Employee {
+    public static int numEmployees = 0;
+    public Employee(String name) {
+        numEmployees++;
+    }
+    public static int getTotalSalary() {
+        int totalEmployees = numEmployees;
+        int totalSalary = 0;
+        for (int i = 0; i < totalEmployees; i++) {
+            totalSalary += employees[i].salary;
+        }
+        return totalSalary;
+    }
+}
+
+
+2.What is class loading and how does the java program actually execute?
+Ans.The Java class loading mechanism is the process of finding and loading Java classes into the Java Virtual Machine (JVM). It is a dynamic process, meaning that classes are loaded only when they are needed.
+
+
+3.Can we mark local veriable as static.
+Ans.No, we cannot mark local variable as static. A local variable is declared inside a method and its scope is limited to the method in which it is declared. A static variable is a class variable and its scope is to the entire class. If we declare a local variable as static, it violates the purpose of static. Hence, the compiler does not allow static local variables.
+
+
+4.Why is the static block executed before the main method in java?
+Ans.In Java, static blocks are executed before the main method because they are part of the class initialization process. When a class is loaded into memory, the JVM first executes all of the static blocks in the class, and then it executes the main method.
+
+
+5.Why is a static method also called a class method?
+Ans.A static method is also called a class method because it belongs to the class and not to any particular instance of the class. This means that you can call a static method without having to create an instance of the class first.
+
+6.What is the use of static block in java?
+Ans.A static block, or static initialization block, is code that is run once for each time a class is loaded into memory. It is useful for setting up static variables or logging, which would then apply to every instance of the class
+
+
+7.Difference between static and instance veriables.
+Ans.The main difference between static and instance variables is that static variables are shared by all instances of a class, while instance variables are unique to each instance.
+Static variables are declared using the static keyword, and they are typically used to store information that is common to all instances of a class, such as the number of instances that have been created or the current state of the class. Instance variables, on the other hand, are declared without the static keyword, and they are typically used to store information that is specific to each instance of a class, such as the name of the instance or its current location.
+
+
+8.Difference between static and non static members.
+Ans.In Java, static members are accessible by their class name, while non-static members are accessed by object reference.
