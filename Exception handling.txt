@@ -1,0 +1,47 @@
+Ans 1 -   The three main types of errors in Java are syntax errors, runtime errors, and logical errors. Syntax errors occur when there is a mistake in the code structure, runtime errors occur during the execution of the program, and logical errors occur when the program does not produce the expected result.
+
+Ans 2 -   An exception is an event, which occurs during the execution of a program, that disrupts the normal flow of the program's instructions. When an error occurs within a method, the method creates an object and hands it off to the runtime system
+
+Ans 3 -  In Java, exceptions can be handled using the try-catch-finally block.
+
+try {
+    // Code that may throw an exception
+} catch (ExceptionType e) {
+    // Code to handle the exception
+} finally {
+    // Code that always executes (optional)
+}
+
+
+ex-- 
+try {
+    int result = 10 / 0; // This will throw an ArithmeticException
+} catch (ArithmeticException e) {
+    System.out.println("Cannot divide by zero: " + e.getMessage());
+}
+
+
+Ans 4 -  Java exception handling is important because it helps maintain the normal, desired flow of the program even when unexpected events occur. If Java exceptions are not handled, programs may crash or requests may fail.
+
+
+Ans 5  - 
+
+Exception:
+Represents an abnormal condition that arises within the application code itself. This could be due to factors like invalid input, file not found, or network issues.
+Error:
+Represents a serious problem that occurs outside the application code and is usually beyond the programmer's control. This could be due to factors like running out of memory, stack overflow, or JVM crashes.
+
+
+
+Ans  6 -  . Checked vs. Unchecked:
+Checked Exceptions:
+
+These exceptions are checked by the compiler at compile time. You must handle them explicitly using try-catch blocks or declare them using the throws keyword in the method signature. Examples: IOException, ClassNotFoundException, SQLException.
+
+Unchecked Exceptions:
+
+These exceptions are not checked at compile time, and they typically occur due to programming errors. You are not required to handle them explicitly, but you can. Examples: NullPointerException, ArrayIndexOutOfBoundsException, ArithmeticException.
+
+
+Ans 7 - In the Java language, you can use a try block without a catch block but you can’t use the catch block without a try block.
+
