@@ -1,0 +1,280 @@
+
+                 Assignments - Time complexity
+Question 1. Analyze the time complexity of the following Java code and suggest a way to improve it:  
+int sum = 0;  
+for(int i = 1; i <= n; i++) {  
+ for(int j = 1; j <= i; j++) {  
+ sum++;  
+ }  
+} 
+ answer- The time complexity of this code is O(n^2) as it uses nested loops, where the outer loop runs n times and the inner loop runs i times where i varies from 1 to n.
+One way to improve the time complexity of this code is to use a mathematical formula to find the sum instead of
+using nested loops.
+
+
+
+
+Question 2: Find the value of T(2) for the recurrence relation T(n) = 3T(n-1) + 12n, given that T(0) = 5.  
+answer=Substituting the values in the relation:
+T(1) = 3T(0) + 12
+=> T(1) = 15 + 12 = 27
+T(2) = 3T(1) + 12 * 2
+=>T(2) = 3 * 27 + 24 = 81 + 24
+Hence T(2) = 105.
+
+Question 3: Given a recurrence relation, solve it using a substitution method.   Relation : T(n) = T(n - 1) + c  
+Answer- Let the solution be T(n) = O(n), now let’s prove this using the induction method.For that to happen T(n) <= cn where c is some constant.
+T(n) = T(n - 1) + c
+T(n - 1) = T(n - 2) + c
+T(n - 2) = T(n - 3) + c
+
+
+T(2) = T(1) + c
+—------------------------ Adding all above equations
+T(n) = T(1) + cn
+Let us assume T(1) to be a constant value.
+T(n) = k + cn
+Therefore, T(n) <= cn
+Hence we can conclude T(n) = O(n).
+
+Question 4: Given a recurrence relation:  
+ T(n) = 16T(n/4) + n2logn  
+ Find the time complexity of this relation using the master theorem
+answer-The relation:T(n)=16T(n/4)+n2logn
+Here,a=16
+b=4
+k=2
+p=1
+bk=42=16
+Here a=bk
+Also p>-1
+Hence T(n)=θ(nlogab*logp+1n)
+Therefore T(n)=θ(nlog164*log1+1n)=θ(n1/2log2n)
+—-------------------------------------------------------------------------------------------------------------------------
+
+
+
+
+
+
+
+
+Q1: Write a program to print the sum of all the elements present on even indices in the given array.
+
+public class CODE10 {
+    public static void main(String[] args) {
+        int[] arr = {1,2,3,4,5,6,7,8};
+   	 int i = 0, sum = 0;
+     while (i < arr.length) {
+         sum += arr[i];
+         i += 2;
+     }
+     System.out.println(sum);
+    }
+}
+
+
+Q2: Write a program to traverse over the elements of the array using for each loop and print all even
+elements.
+
+public class CODE11 {
+    public static void main(String[] args) {
+        int[] arr = { 1, 2, 3, 4, 5, 6, 7, 8 };
+        for (int elem : arr) {
+            if (elem % 2 == 0)
+                System.out.println(elem);
+
+        }
+    }
+}
+
+Q3: Write a program to calculate the maximum element in the array.
+
+public class CODE12 {
+    public static void main(String[] args) {
+        int[] arr = { 10, 7, -5, 8, 9, 0, -4 };
+        int max = Integer.MIN_VALUE;
+        for (int val : arr) {
+            max = Math.max(max, val);
+        }
+        System.out.print("Largest in given array is " + max);
+
+    }
+}
+
+Q4: Write a program to find out the second largest element in a given array.
+
+public class CODE13 {
+    public static void main(String[] args) {
+        int[] arr = { 34, 21, 54, 65, 43 };
+        int arr_size = arr.length;
+        int i, first, second;
+        // There should be at least two elements
+        if (arr_size < 2) {
+            System.out.printf(" Invalid Input ");
+            return;
+        }
+        int largest = second = Integer.MIN_VALUE;
+
+        // Find the largest element
+        for (i = 0; i < arr_size; i++)
+            largest = Math.max(largest, arr[i]);
+
+        // Find the second largest element
+        for (i = 0; i < arr_size; i++) {
+            if (arr[i] != largest)
+                second = Math.max(second, arr[i]);
+        }
+        if (second == Integer.MIN_VALUE)
+            System.out.printf("There is no second " +
+                    "largest element\n");
+        else
+            System.out.printf("%d\n", second);
+    }
+
+}
+
+Q5: Given an array. Find the first peak element in the array. A peak element is an element that is greater than
+ 
+public class CODE11 {
+    public static void main(String[] args) {
+        int[] arr = { 1, 2, 3, 4, 5, 6, 7, 8 };
+        for (int elem : arr) {
+            if (elem % 2 == 0)
+                System.out.println(elem);
+
+        }
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+Q1: Take m and n input from the user and m * n integer inputs from user and print the following:
+number of positive numbers
+number of negative numbers
+number of odd numbers
+number of even numbers
+number of 0.
+
+import java.io.*;
+import java.util.*;
+public class Main{ 
+  public static void main(String args[]){
+    
+    int m,n;
+    Scanner sc=new Scanner(System.in);
+    System.out.print("enter the number of rows=");
+    m=sc.nextInt();    
+    System.out.print("enter the number of column=");    
+    n=sc.nextInt();
+    int arr[][]=new int[m][n];
+    
+    int i,j;    
+       
+    System.out.println("enter the  matrix element=\n");    
+    for(i=0;i<m;i++){    
+        for(j=0;j<n;j++){    
+            arr[i][j]=sc.nextInt();  
+        }    
+    }     
+    int positive = 0 , negative = 0 , zero = 0 , odd = 0 , even = 0;
+        for( i = 0 ; i < m  ; i++){
+            for( j = 0 ; j < n  ; j++){
+                if(arr[i][j] > 0)positive++;
+                if(arr[i][j] < 0)negative++;
+                if(arr[i][j] == 0)zero++;
+                if((arr[i][j] % 2) == 0)even++;
+                if((arr[i][j] % 2) != 0)odd++;
+            }
+        }
+        
+        System.out.println("Number of positives = " + positive);
+        System.out.println("Number of negatives = " + negative);
+        System.out.println("Number of odds = " + odd);
+        System.out.println("Number of evens = " + even);
+        System.out.println("Number of zeroes = " + zero);
+    }     
+}
+
+Q2: write a program to print the elements above the secondary diagonal in a user inputted
+square matrix.
+import java.io.*;
+import java.util.*;
+public class Main{ 
+  public static void main(String args[]){
+    
+    int m,n;
+    Scanner sc=new Scanner(System.in);
+    System.out.print("enter the number of rows : ");
+    m=sc.nextInt();    
+    System.out.print("enter the number of column : ");    
+    n=sc.nextInt();
+    int arr[][]=new int[m][n];
+    
+    int i,j;    
+       
+    System.out.println("enter the  matrix element : ");    
+    for(i = 0 ; i < m ; i++){    
+        for(j = 0 ; j < n ; j++){    
+            arr[i][j]=sc.nextInt();  
+        }    
+    }     
+    
+    System.out.println("Elements above secondary diagonal are as follows : ");    
+    for(i = 0 ; i < m ; i++){    
+        for(j = 0 ; j < n ; j++){    
+            if(i + j < m - 1)System.out.print(arr[i][j] + "  ");
+            }    
+        }  
+    }     
+}
+
+Q3: write a program to print the elements of both the diagonals in a user inputted square matrix in
+any order.
+
+
+import java.io.*;
+import java.util.*;
+public class Test{ 
+  public static void main(String args[]){
+    
+    int m,n;
+    Scanner sc=new Scanner(System.in);
+    System.out.print("enter the number of rows : ");
+    m=sc.nextInt();    
+    System.out.print("enter the number of column : ");    
+    n=sc.nextInt();
+    int arr[][]=new int[m][n];
+    
+    int i,j;    
+       
+    System.out.println("enter the  matrix element : ");    
+    for(i = 0 ; i < m ; i++){    
+        for(j = 0 ; j < n ; j++){    
+            arr[i][j]=sc.nextInt();  
+        }    
+    }     
+    
+    System.out.println("Elements of both the diagonals are as follows : ");    
+
+    // As we have a square matrix, and we know this special property of Diagnol element, then for one diagonal both indices are same and for other the sum of both = m-1. 
+    // So we will optimise our solution by just traversing one time and getitng both the values. To skip middle element twice we will add an check extra i.e. i!= m-1-i
+    for(i = 0 ; i < m ; i++){        
+        System.out.print(arr[i][i] + "  ");
+
+        if(i != m-1-i)
+            System.out.print(arr[i][m-1-i] + "  ");
+        }    
+    }  
+      
+}
