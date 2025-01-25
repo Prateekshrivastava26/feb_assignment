@@ -1,0 +1,216 @@
+Q1. Implement a Map in java which takes the input and print the list in sorted order based on key.
+Input: 5- Rahul, 7 Lakshman, 1 Ram, 4 Krrish, 2 Lakshay
+Output: {1=Ram, 2=Lakshay, 4=Krrish, 5=Rahul, 7=lakshman}
+Solution - 
+
+import java.util.*;
+import java.util.Map;
+import java.io.*;
+  
+public class HashMapClass {
+    public static void main(String[] args)
+    {
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Enter the number of elements of Key-pair: ");  
+        
+        int n = sc.nextInt();
+
+       
+        TreeMap<Integer, String> tm = new TreeMap<>();
+
+        System.out.print("Enter the elements in Key and value : ");  
+        for(int i=0;i<n;i++){
+            int key = sc.nextInt();
+            String value = sc.next();
+            tm.put(key, value);
+        }
+
+        System.out.println("The value of Map is: " + tm);
+
+    }
+}
+
+
+
+
+
+
+
+Q2. Implement a Map in java which takes the input and print the list in sorted order based on value.
+Input: 5- Rahul, 7 Lakshman, 1 Ram, 4 Krrish, 2 Lakshay
+Output: {Krish=4,Lakshay=2,Lakshman=7,Rahul=5,Ram=1}
+Solution - 
+import java.util.*;
+import java.util.Map;
+import java.io.*;
+  
+public class HashMapClass {
+    public static void main(String[] args)
+    {
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Enter the number of elements of Key-pair: ");  
+        
+        int n = sc.nextInt();
+
+       
+        TreeMap<String, Integer> tm = new TreeMap<>();
+
+        System.out.print("Enter the elements in Key and value : ");  
+        for(int i=0;i<n;i++){
+            int key = sc.nextInt();
+            String value = sc.next();
+            tm.put(value, key);
+        }
+
+        System.out.println("The value of Map is: " + tm);
+
+    }
+}
+
+
+
+
+
+
+
+Q3.Detect if an Array contains a duplicate element. At Most 1 duplicate would be there.
+Input: 1,2,3,4
+Output: No
+Input: 1, 2, 3, 4, 1
+Output: Yes.
+Solution - 
+
+import java.util.*;
+import java.util.Map;
+import java.io.*;
+  
+public class HashMapClass {
+    public static void main(String[] args)
+    {
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Enter the number of elements of array: ");  
+        
+        int n = sc.nextInt();
+
+        int[] arr = new int[n];
+
+        System.out.print("Enter the elements of array: ");  
+        for(int i=0;i<n;i++){
+            arr[i] = sc.nextInt();
+        }
+
+        HashMap<Integer, Integer> tm = new HashMap<>();
+        int answer = 0;
+        for(int i=0;i<n;i++){
+            if(tm.containsKey(arr[i])){
+                System.out.println("Yes");
+                answer =1;
+                break;
+            }
+            tm.put(arr[i], 1);
+        }
+
+        if(answer == 0)
+            System.out.println("No");
+
+    }
+}
+
+
+
+Q4. Given an array nums of size n, return the majority element.
+Input: 4,2,7,1,9
+Output: 9
+
+Solution - import java.util.*;
+import java.util.Map;
+import java.io.*;
+  
+public class HashMapClass {
+    public static void main(String[] args)
+    {
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Enter the number of elements of array: ");  
+        
+        int n = sc.nextInt();
+
+        int[] arr = new int[n];
+
+        System.out.print("Enter the elements of array: ");  
+        for(int i=0;i<n;i++){
+            arr[i] = sc.nextInt();
+        }
+
+        TreeMap<Integer, Integer> tm = new TreeMap<>();
+
+        for(int i=0;i<n;i++){
+            tm.put(arr[i], 1);
+        }
+
+        System.out.println("Largest Element of Map is : " + tm.lastEntry().getKey());
+
+    }
+}
+
+
+Q5. Given two strings ransomNote and magazine, return true if ransomNote can be constructed by using the
+letters from magazine and false otherwise.
+Each letter in magazine can only be used once in ransomNote.
+Input: ransomNote = "a", magazine = "b"
+Output: false
+Input: ransomNote = "aa", magazine = "ab"
+Output: false
+Solution - import java.util.*;
+import java.util.Map;
+import java.io.*;
+  
+public class HashMapClass {
+    public static void main(String[] args)
+    {
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Enter the RansomNote String: ");  
+        
+        String s=sc.nextLine();
+
+        System.out.print("Enter the Magazine String: ");  
+        
+        String r=sc.nextLine();
+
+
+        HashMap<Character, Integer> hm1 = new HashMap<>();
+
+        for(int i=0;i<s.length(); i++ ){
+            if(hm1.containsKey(s.charAt(i))) {
+                hm1.put(s.charAt(i), hm1.get(s.charAt(i))+1);
+            }
+            else
+                hm1.put(s.charAt(i), 1);
+        }     
+
+        HashMap<Character, Integer> hm2 = new HashMap<>();
+
+        for(int i=0;i<r.length(); i++ ){
+            if(hm2.containsKey(r.charAt(i))) {
+                hm2.put(r.charAt(i), hm2.get(r.charAt(i))+1);
+            }
+            else
+                hm2.put(r.charAt(i), 1);
+        }     
+
+        
+
+        Integer answer = -1;
+        for(Map.Entry<Character, Integer> e: hm1.entrySet()) {
+
+            if(e.getValue() > hm2.get(e.getKey())){
+
+                System.out.println("false");
+                answer = 1;
+                break;
+            }
+        }
+        if(answer == -1)
+            System.out.println("True");
+
+    }
+}
