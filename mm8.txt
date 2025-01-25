@@ -1,0 +1,57 @@
+1. What is the Collection framework in Java?
+Ans: Collection Framework is a combination of classes and interface, which is used to store and manipulate the
+data in the form of objects. It provides various classes such as ArrayList, Vector, Stack, and HashSet, etc. and
+interfaces such as List, Queue, Set, etc. for this purpose.
+
+5. What is the difference between List and Set?
+Ans: The List and Set both extend the collection interface. However, there are some differences between the two
+which are listed below@
+o The List can contain duplicate elements whereas Set includes unique items@
+o The List is an ordered collection which maintains the insertion order whereas Set is an unordered collection
+which does not preserve the insertion order@
+o The List interface contains a single legacy class which is Vector class whereas the Set interface does not
+have any legacy class@
+o The List interface can allow a number of null values whereas Set interface only allows a single null value.
+6. What is the difference between HashSet and TreeSet?
+Ans: Both HashSet and TreeSet are implementations of the Set interface in Java, but they have some
+differences in terms of their properties and usage1
+o Ordering: HashSet is an unordered collection of elements, while TreeSet is a sorted set of elements based on
+their natural order or a custom comparator@
+o Duplication: HashSet does not allow duplicate elements, while TreeSet does not allow duplicates as well@
+
+o Implementation: HashSet is implemented using a hash table, while TreeSet is implemented using a self-
+balancing binary search tree (Red-Black tree)@
+
+o Performance: HashSet has constant-time complexity O(1) for adding, removing, and testing the existence of
+
+an element, while TreeSet has a logarithmic-time complexity O(log n) for these operations due to the self-
+balancing property@
+
+o Memory usage: HashSet uses less memory than TreeSet because it only stores the elements, while TreeSet
+stores additional information for maintaining the order@
+o Iteration: HashSet provides no guarantees regarding the order of iteration, while TreeSet guarantees the
+elements are iterated in sorted order@
+o Usage: HashSet is suitable when ordering is not important, and fast access and membership tests are
+needed. TreeSet is suitable when elements need to be sorted or accessed in a specific order.
+7. What is the difference between Array and ArrayList?
+Ans: Both arrays and ArrayLists are used to store collections of elements in Java, but they have some
+differences in terms of their properties and usage1
+o Type: Arrays can store elements of primitive data types as well as objects, while ArrayList can only store
+objects@
+o Size: The size of an array is fixed once it is created, while the size of an ArrayList can be dynamically
+increased or decreased by adding or removing elements@
+o Mutability: Arrays are mutable, meaning that you can modify the elements in an array after it has been
+created. ArrayList is also mutable, but the only way to modify it is by adding, removing or modifying
+elements@
+o Performance: Arrays have better performance than ArrayLists for certain operations, such as accessing
+elements by index, because they are implemented as a continuous block of memory. ArrayLists, on the other
+hand, use dynamic memory allocation and are implemented as a dynamic array, which may result in more
+memory overhead and slower performance for certain operations@
+o Methods: Arrays have a limited set of methods compared to ArrayLists, which provides more methods for
+manipulating the collection, such as adding, removing, and sorting elements.
+
+E Initialization: Arrays can be initialized with values at the time of creation, while ArrayList requires the use of
+methods to add elements to the collectionN
+E Compatibility: Arrays are compatible with traditional for-loops and can be easily passed to other methods,
+while ArrayList requires the use of a special for-each loop and may require more code to be passed to other
+methods.
